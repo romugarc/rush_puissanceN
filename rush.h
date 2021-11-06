@@ -6,7 +6,7 @@
 /*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 17:03:48 by tnguyen-          #+#    #+#             */
-/*   Updated: 2021/11/06 18:00:47 by tnguyen-         ###   ########.fr       */
+/*   Updated: 2021/11/06 18:13:03 by tnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int		main(void);
 int		ft_atoi(const char *str);
 char	**ft_map(int width, int height);
 void	*ft_memset(void	*s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
 
 #endif
