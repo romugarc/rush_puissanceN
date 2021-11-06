@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main.c                                          :+:      :+:    :+:   */
+/*   rush.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 17:03:33 by tnguyen-          #+#    #+#             */
-/*   Updated: 2021/11/06 17:45:05 by tnguyen-         ###   ########.fr       */
+/*   Created: 2021/11/06 17:03:48 by tnguyen-          #+#    #+#             */
+/*   Updated: 2021/11/06 18:00:47 by tnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#ifndef RUSH_H
+# define RUSH_H
+# include <stdlib.h>
+# include <stdio.h>
 
-int	main(void)
-{
-	int	height;
-	int	width;
+int		main(void);
+int		ft_atoi(const char *str);
+char	**ft_map(int width, int height);
+void	*ft_memset(void	*s, int c, size_t n);
 
-	printf("Width: ");
-	scanf("%d", &width);
-	printf("Height:");
-	scanf("%d", &height);
-	ft_map(width, height);
-}
+#endif

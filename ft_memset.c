@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 17:03:33 by tnguyen-          #+#    #+#             */
-/*   Updated: 2021/11/06 17:45:05 by tnguyen-         ###   ########.fr       */
+/*   Created: 2021/11/04 05:43:26 by tnguyen-          #+#    #+#             */
+/*   Updated: 2021/11/04 18:23:15 by tnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "libft.h"
 
-int	main(void)
+void	*ft_memset(void	*s, int c, size_t n)
 {
-	int	height;
-	int	width;
+	size_t			i;
+	unsigned char	*cast_str;
 
-	printf("Width: ");
-	scanf("%d", &width);
-	printf("Height:");
-	scanf("%d", &height);
-	ft_map(width, height);
+	i = 0;
+	cast_str = (unsigned char *) s;
+	while (i < n && cast_str)
+	{
+		cast_str[i] = c;
+		i++;
+	}
+	return ((void *) cast_str);
 }

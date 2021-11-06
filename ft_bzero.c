@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 17:03:33 by tnguyen-          #+#    #+#             */
-/*   Updated: 2021/11/06 17:45:05 by tnguyen-         ###   ########.fr       */
+/*   Created: 2021/11/04 05:42:17 by tnguyen-          #+#    #+#             */
+/*   Updated: 2021/11/06 17:34:32 by tnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_bzero(void *s, size_t n)
 {
-	int	height;
-	int	width;
-
-	printf("Width: ");
-	scanf("%d", &width);
-	printf("Height:");
-	scanf("%d", &height);
-	ft_map(width, height);
+	ft_memset(s, 0, n);
 }
