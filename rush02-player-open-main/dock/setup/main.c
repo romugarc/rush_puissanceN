@@ -6,7 +6,7 @@
 /*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:19:39 by rgarcia           #+#    #+#             */
-/*   Updated: 2021/11/07 16:35:37 by tnguyen-         ###   ########.fr       */
+/*   Updated: 2021/11/07 19:05:33 by rgarcia          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ int	main(void)
 {
 	int	width;
 	int	height;
-	int	n;
-	int	c;
+	int	power;
 	int	joueur;
-	int	i;
-	int	j;
+	int	time;
+	int	gain;
 	int	move;
+	int	i;
+	//int	j;
 
-	scanf("%d%d", &width, &height);
+	scanf("%d%d%d%d%d%d", &width, &height, &power, &joueur, &time, &gain);
 	char	**truc = ft_map(width, height);
 	i = 0;
 	/*while (i < height)
@@ -44,11 +45,18 @@ int	main(void)
 	}
 	joueur = 1;
 	*/
+	if (width > 1)
+		move = 1;
+	else
+		move = 0;
+	if (joueur == 1)
+		printf("%d\n", move);
 	while (1)
 	{
 		if (joueur == 1)
 		{
-			move = algo(truc);
+			move = ft_algo(truc, power, width, height);
+			//scanf("%d", &move);
 			printf("%d\n", move);
 			fflush(stdout);
 			truc = ft_mapping(truc, move, joueur);
