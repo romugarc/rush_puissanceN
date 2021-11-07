@@ -3,51 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rgarcia <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:19:39 by rgarcia           #+#    #+#             */
-/*   Updated: 2021/11/07 14:45:23 by rgarcia          ###   ########lyon.fr   */
+/*   Updated: 2021/11/07 16:35:37 by tnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <iostream>
-//#include <std::*>
+#include "rush.h"
 
 void	ft_putnbr(int nb);
 
 int	main(void)
 {
-	int i;
-	int	w;
-	int	h;
-	int	a;
+	int	width;
+	int	height;
+	int	n;
 	int	c;
 	int	joueur;
-	i = 1;
-	scanf("%d%d%d%d%d", &w, &h, &a, &joueur, &c);
-	//setbuf(stdout, NULL);
+	int	i;
+	int	j;
+	int	move;
+
+	scanf("%d%d", &width, &height);
+	char	**truc = ft_map(width, height);
+	i = 0;
+	/*while (i < height)
+	{
+		j = 0;
+		while (j < width)
+		{
+			printf("%c | ", truc[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	joueur = 1;
+	*/
 	while (1)
 	{
-		//sleep(1);
-		//fflush(stdout);
-		//ft_putnbr(2);
 		if (joueur == 1)
 		{
-			printf("%d", 1);
+			move = algo(truc);
+			printf("%d\n", move);
 			fflush(stdout);
+			truc = ft_mapping(truc, move, joueur);
 			joueur = 2;
 		}
 		else
 		{
-			scanf("%d", &joueur);
+			scanf("%d", &move);
+			truc = ft_mapping(truc, move, joueur);
 			joueur = 1;
 		}
-		//printf("%d\t%d\t%d\t%d\t%d\n", w, h, a, b, c);
-		//cin >> b;
-		//cout << i << std::endl;
 	}
 	return (0);
 }
